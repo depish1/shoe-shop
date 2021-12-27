@@ -1,3 +1,10 @@
+export enum UserDataActionTypes {
+  LOGIN_SUCCESS = "LOGIN_SUCCESS",
+  LOGIN_FAIL = "LOGIN_FAIL",
+  LOGIN_LOADING = "LOGIN_LOADING",
+  LOGAUT = "LOGAUT",
+}
+
 interface IAdress {
   street?: string;
   houseNumber?: string;
@@ -9,44 +16,29 @@ interface IAdress {
 export interface IUserData {
   uid: string;
   email: string;
-  name: string;
+  name?: string;
   adress?: IAdress;
 }
 
 export interface IUserDataState {
   userData: null | IUserData;
-  isFetching: boolean;
+  isLoading: boolean;
+  errorMsg: string;
 }
 
-export enum UserDataActionTypes {
-  LOGIN = "LOGIN",
-  SET_USER_DATA = "SET_USER_DATA",
-  CLEAR_USER_DATA = "CLEAR_USER_DATA",
+export interface LoginLoading {
+  type: typeof UserDataActionTypes.LOGIN_LOADING;
 }
-
-type LoginUserActionType = {
-  type: UserDataActionTypes.LOGIN;
-  payload: {
-    email: string;
-    password: string;
-  };
-};
-type SetUserDataActionType = {
-  type: UserDataActionTypes.SET_USER_DATA;
+export interface LoginSuccess {
+  type: typeof UserDataActionTypes.LOGIN_SUCCESS;
   payload: IUserData;
-};
-
-type ClearUserDataActionType = {
-  type: UserDataActionTypes.CLEAR_USER_DATA;
-};
-
-interface SetFetchingActionType {
-  type: "SET_FETCHING";
-  isFetching: boolean;
+}
+export interface LoginFail {
+  type: typeof UserDataActionTypes.LOGIN_FAIL;
+  payload: string;
+}
+export interface Logaut {
+  type: typeof UserDataActionTypes.LOGAUT;
 }
 
-export type UserDataActions =
-  | LoginUserActionType
-  | SetUserDataActionType
-  | ClearUserDataActionType
-  | SetFetchingActionType;
+export type UserDataActions = LoginLoading | LoginSuccess | LoginFail | Logaut;
