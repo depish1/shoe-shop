@@ -1,10 +1,16 @@
 import Button from "components/atoms/Button/Button";
+import {
+  SectionBackgroundContainer,
+  SectionWrapper,
+} from "components/atoms/Wrappers/Wrappers.styled";
 
 const SignIn: React.FC = () => {
   return (
-    <div>
-      <Button text="Zaloguj się" clickHandler={() => console.log("xd")} />
-    </div>
+    <SectionBackgroundContainer>
+      <SectionWrapper>
+        <Button text="Zaloguj się" clickHandler={() => console.log("xd")} />
+      </SectionWrapper>
+    </SectionBackgroundContainer>
   );
 };
 
