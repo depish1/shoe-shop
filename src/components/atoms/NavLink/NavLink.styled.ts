@@ -37,7 +37,7 @@ export const StyledNavLink = styled(Link)`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: ${({ theme: { colors } }) => colors.primary2};
+    background-color: ${({ theme: { colors } }) => colors.primary1};
     width: 0;
     height: 0;
     transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
@@ -46,10 +46,6 @@ export const StyledNavLink = styled(Link)`
   &:hover,
   &:focus {
     background-color: ${({ theme: { colors } }) => colors.secondary2};
-
-    svg {
-      fill: ${({ theme: { colors } }) => colors.primary2};
-    }
 
     &::after {
       width: 100%;

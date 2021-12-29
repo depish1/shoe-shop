@@ -11,10 +11,10 @@ export const SectionBackgroundContainer = styled.main`
 export const SectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 2rem 3rem;
+  padding: 3rem;
   background-color: ${({ theme: { colors } }) => colors.white1};
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
