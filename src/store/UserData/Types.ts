@@ -2,7 +2,7 @@ export enum UserDataActionTypes {
   LOGIN_SUCCESS = "LOGIN_SUCCESS",
   LOGIN_FAIL = "LOGIN_FAIL",
   LOGIN_LOADING = "LOGIN_LOADING",
-  LOGAUT = "LOGAUT",
+  LOGOUT = "LOGOUT",
 }
 
 interface IAdress {
@@ -37,8 +37,12 @@ export interface LoginFail {
   type: typeof UserDataActionTypes.LOGIN_FAIL;
   payload: string;
 }
-export interface Logaut {
-  type: typeof UserDataActionTypes.LOGAUT;
+export interface LogoutAction {
+  type: typeof UserDataActionTypes.LOGOUT;
 }
 
-export type UserDataActions = LoginLoading | LoginSuccess | LoginFail | Logaut;
+export type UserDataActions =
+  | LoginLoading
+  | LoginSuccess
+  | LoginFail
+  | LogoutAction;

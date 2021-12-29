@@ -1,6 +1,7 @@
 import Theme from "styles/Theme";
 import GlobalStyle from "styles/GlobalStyle";
 import SignIn from "components/views/SignIn";
+import Products from "components/views/Products";
 import Header from "components/organisms/Header/Header";
 import { login } from "store/UserData/Actions";
 import { useAppDispatch } from "store/hooks";
@@ -16,7 +17,10 @@ const App: React.FC = () => {
       <Router>
         <Header />
         <Routes>
+          <Route path="/products" element={<Products />} />
           <Route path="/signin" element={<SignIn />} />
+
+          <Route path="*" element={<Products />} />
         </Routes>
       </Router>
       <GlobalStyle />

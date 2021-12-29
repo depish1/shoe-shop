@@ -9,6 +9,7 @@ const userDataReducer = (
   state: IUserDataState = initialState,
   action: UserDataActions
 ) => {
+  console.log("reducer", action);
   switch (action.type) {
     case UserDataActionTypes.LOGIN_LOADING:
       return { ...initialState, isLoading: true };
@@ -18,7 +19,8 @@ const userDataReducer = (
     case UserDataActionTypes.LOGIN_FAIL:
       console.log(action);
       return { ...initialState, errorMsg: action.payload };
-    case UserDataActionTypes.LOGAUT:
+    case UserDataActionTypes.LOGOUT:
+      console.log(action);
       return initialState;
     default:
       return state;

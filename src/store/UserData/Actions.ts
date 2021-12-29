@@ -1,6 +1,6 @@
 import { ThunkDispatch } from "redux-thunk";
 import { Action } from "redux";
-import { UserDataActionTypes } from "./Types";
+import { UserDataActionTypes, LogoutAction } from "./Types";
 import { FirebaseMethods } from "utils/firebase/FirebaseHelper";
 
 export const login =
@@ -32,3 +32,7 @@ export const login =
       });
     }
   };
+
+export const logout = {
+  type: UserDataActionTypes.LOGOUT,
+};

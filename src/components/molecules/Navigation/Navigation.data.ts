@@ -36,8 +36,9 @@ export const navData = {
     },
     {
       text: "Wyloguj się",
-      path: "/logaut",
+      path: "/products",
       Icon: LogoutIcon,
+      isLogout: true,
     },
   ],
 };
