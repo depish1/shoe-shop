@@ -1,6 +1,6 @@
 import { ThunkDispatch } from "redux-thunk";
 import { Action } from "redux";
-import { UserDataActionTypes, LogoutAction } from "./Types";
+import { EUserDataActionTypes } from "./Types";
 import { FirebaseMethods } from "utils/firebase/FirebaseHelper";
 
 export const login =
@@ -8,7 +8,7 @@ export const login =
   async (dispatch: ThunkDispatch<any, void, Action>) => {
     try {
       dispatch({
-        type: UserDataActionTypes.LOGIN_LOADING,
+        type: EUserDataActionTypes.LOGIN_LOADING,
       });
       const authUserResp = await FirebaseMethods.authUser(email, password);
       const userData = await FirebaseMethods.getDocumentById(
@@ -17,7 +17,7 @@ export const login =
       );
 
       dispatch({
-        type: UserDataActionTypes.LOGIN_SUCCESS,
+        type: EUserDataActionTypes.LOGIN_SUCCESS,
         payload: {
           ...authUserResp,
           name: userData.name,
@@ -25,14 +25,10 @@ export const login =
         },
       });
     } catch (error) {
-      console.error(error);
       dispatch({
-        type: UserDataActionTypes.LOGIN_FAIL,
-        payload: "Błąd logowania",
+        type: EUserDataActionTypes.LOGIN_FAIL,
+        payload: "Niepoprawny email lub hasło",
       });
+      throw new Error("Błąd logowania");
     }
   };
-
-export const logout = {
-  type: UserDataActionTypes.LOGOUT,
-};

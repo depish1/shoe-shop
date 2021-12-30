@@ -1,3 +1,4 @@
+import { UseFormRegisterReturn } from "react-hook-form";
 import {
   FieldWrapper,
   StyledInput,
@@ -8,14 +9,19 @@ import {
 interface IInputFieldProps {
   label: string;
   type: "text" | "password" | "email" | "password";
+  formProps: UseFormRegisterReturn;
   error?: string;
 }
 
-const InputField: React.FC<IInputFieldProps> = ({ label, type, error }) => {
-  console.log("input", label);
+const InputField: React.FC<IInputFieldProps> = ({
+  label,
+  type,
+  error,
+  formProps,
+}) => {
   return (
     <FieldWrapper>
-      <StyledInput type={type} isInvalid={!!error} />
+      <StyledInput type={type} isInvalid={!!error} {...formProps} />
       <StyledLabel isInvalid={!!error}>{label}</StyledLabel>
       <StyledErrorMsg>{error}</StyledErrorMsg>
     </FieldWrapper>

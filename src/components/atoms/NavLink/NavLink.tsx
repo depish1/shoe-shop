@@ -1,7 +1,7 @@
 import { StyledNavLink, StyledNavElement } from "./NavLink.styled";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "store/hooks";
-import { UserDataActionTypes } from "store/UserData/Types";
+import { EUserDataActionTypes } from "store/UserData/Types";
 
 interface INavLinkProps {
   text: string;
@@ -14,7 +14,7 @@ const NavLink: React.FC<INavLinkProps> = ({ text, path, Icon, isLogout }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const logoutHandle = () => {
-    dispatch({ type: UserDataActionTypes.LOGOUT });
+    dispatch({ type: EUserDataActionTypes.LOGOUT });
     navigate("/products", { replace: true });
   };
   return (

@@ -14,7 +14,7 @@ export const navData = {
     },
     {
       text: "Zaloguj się",
-      path: "/signin",
+      path: "/login",
       Icon: LoginIcon,
     },
     {

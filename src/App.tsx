@@ -1,24 +1,29 @@
 import Theme from "styles/Theme";
 import GlobalStyle from "styles/GlobalStyle";
-import SignIn from "components/views/SignIn";
+import LoginForm from "components/views/LoginForm";
 import Products from "components/views/Products";
 import Header from "components/organisms/Header/Header";
-import { login } from "store/UserData/Actions";
-import { useAppDispatch } from "store/hooks";
+import { useAppSelector } from "store/hooks";
 import { ThemeProvider } from "styled-components";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 const App: React.FC = () => {
-  const dispatch = useAppDispatch();
-  dispatch(login("michal.depa@op.pl", "123456"));
-
+  const userData = useAppSelector((state) => state.userDataReducer.userData);
   return (
     <ThemeProvider theme={Theme}>
       <Router>
         <Header />
         <Routes>
           <Route path="/products" element={<Products />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route
+            path="/login"
+            element={!userData ? <LoginForm /> : <Navigate to="/products" />}
+          />
 
           <Route path="*" element={<Products />} />
         </Routes>

@@ -17,7 +17,8 @@ export const Theme = {
     primary2: "#006494",
     secondary1: "#03071e",
     secondary2: "#13172e",
-    error: "#d00000",
+    error: "#cc0000",
+    errorBg: "#eaafa3",
   },
 };
 

@@ -35,7 +35,6 @@ class FirebaseHelper {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log(docSnap);
       return docSnap.data();
     } else {
       return null;
@@ -74,7 +73,6 @@ export const getDocumentById = async (
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log(docSnap);
     return docSnap;
   } else {
     return null;

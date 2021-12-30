@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const SectionBackgroundContainer = styled.main`
   background-color: ${({ theme: { colors } }) => colors.white2};
   width: 100%;
-  height: calc(100vh - ${({ theme }) => theme.headerHeight});
+  min-height: calc(100vh - ${({ theme }) => theme.headerHeight});
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0;
 `;
 export const SectionWrapper = styled.section`
   display: flex;

@@ -1,4 +1,8 @@
-import { UserDataActions, UserDataActionTypes, IUserDataState } from "./Types";
+import {
+  TUserDataActions,
+  EUserDataActionTypes,
+  IUserDataState,
+} from "./Types";
 
 const initialState = {
   isLoading: false,
@@ -7,17 +11,19 @@ const initialState = {
 };
 const userDataReducer = (
   state: IUserDataState = initialState,
-  action: UserDataActions
+  action: TUserDataActions
 ) => {
   switch (action.type) {
-    case UserDataActionTypes.LOGIN_LOADING:
+    case EUserDataActionTypes.LOGIN_LOADING:
       return { ...initialState, isLoading: true };
-    case UserDataActionTypes.LOGIN_SUCCESS:
+    case EUserDataActionTypes.LOGIN_SUCCESS:
       return { ...initialState, userData: action.payload };
-    case UserDataActionTypes.LOGIN_FAIL:
+    case EUserDataActionTypes.LOGIN_FAIL:
       return { ...initialState, errorMsg: action.payload };
-    case UserDataActionTypes.LOGOUT:
+    case EUserDataActionTypes.LOGOUT:
       return initialState;
+    case EUserDataActionTypes.CLEAR_ERROR:
+      return { ...initialState, errorMsg: "" };
     default:
       return state;
   }

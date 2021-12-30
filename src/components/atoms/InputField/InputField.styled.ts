@@ -20,7 +20,7 @@ export const StyledLabel = styled.label<IFormFieldProps>`
   color: ${({ isInvalid, theme: { colors } }) =>
     isInvalid ? colors.error : colors.secondary1};
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   background-color: ${({ theme: { colors } }) => colors.white1};
   padding: 0 0.3rem;
 `;
