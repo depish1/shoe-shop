@@ -19,7 +19,7 @@ export const navData = {
     },
     {
       text: "Zarejestruj się",
-      path: "/signout",
+      path: "/registration",
       Icon: RegistrationIcon,
     },
   ],

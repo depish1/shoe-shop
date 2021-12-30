@@ -1,21 +1,20 @@
 import { ThunkDispatch } from "redux-thunk";
 import { Action } from "redux";
 import { EUserDataActionTypes } from "./Types";
-import { FirebaseMethods } from "utils/firebase/FirebaseHelper";
+import { FirebaseMethods, IErrorCodes } from "utils/firebase/FirebaseHelper";
 
 export const login =
   (email: string, password: string) =>
   async (dispatch: ThunkDispatch<any, void, Action>) => {
     try {
       dispatch({
-        type: EUserDataActionTypes.LOGIN_LOADING,
+        type: EUserDataActionTypes.AUTH_LOADING_ON,
       });
       const authUserResp = await FirebaseMethods.authUser(email, password);
       const userData = await FirebaseMethods.getDocumentById(
         authUserResp.uid,
         "userData"
       );
-
       dispatch({
         type: EUserDataActionTypes.LOGIN_SUCCESS,
         payload: {
@@ -24,11 +23,18 @@ export const login =
           adress: userData.adress,
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       dispatch({
-        type: EUserDataActionTypes.LOGIN_FAIL,
-        payload: "Niepoprawny email lub hasło",
+        type: EUserDataActionTypes.AUTH_LOADING_OFF,
       });
-      throw new Error("Błąd logowania");
+      switch (error.message) {
+        case IErrorCodes.WRONG_PASSWORD:
+        case IErrorCodes.USER_NOT_FOUND:
+          throw new Error("Nieprawidłowy email lub hasło");
+        default:
+          throw new Error(
+            "Wystąpił niespodziewany problem. Spróbuj ponownie później "
+          );
+      }
     }
   };

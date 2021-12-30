@@ -23,7 +23,7 @@ const InputField: React.FC<IInputFieldProps> = ({
     <FieldWrapper>
       <StyledInput type={type} isInvalid={!!error} {...formProps} />
       <StyledLabel isInvalid={!!error}>{label}</StyledLabel>
-      <StyledErrorMsg>{error}</StyledErrorMsg>
+      {error && <StyledErrorMsg>{error}</StyledErrorMsg>}
     </FieldWrapper>
   );
 };

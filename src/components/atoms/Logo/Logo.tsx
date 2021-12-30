@@ -7,10 +7,12 @@ interface ILogoProps {
 
 const Logo: React.FC<ILogoProps> = ({ textPart1, textPart2 }) => {
   return (
-    <StyledLogo>
-      <FirstTextPart>{textPart1}</FirstTextPart>
-      <SecondTextPart>{textPart2}</SecondTextPart>
-    </StyledLogo>
+    <h1>
+      <StyledLogo to="/">
+        <FirstTextPart>{textPart1}</FirstTextPart>
+        <SecondTextPart>{textPart2}</SecondTextPart>
+      </StyledLogo>
+    </h1>
   );
 };
 

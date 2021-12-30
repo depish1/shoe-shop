@@ -14,16 +14,14 @@ const userDataReducer = (
   action: TUserDataActions
 ) => {
   switch (action.type) {
-    case EUserDataActionTypes.LOGIN_LOADING:
+    case EUserDataActionTypes.AUTH_LOADING_ON:
       return { ...initialState, isLoading: true };
+    case EUserDataActionTypes.AUTH_LOADING_OFF:
+      return { ...initialState, isLoading: false };
     case EUserDataActionTypes.LOGIN_SUCCESS:
       return { ...initialState, userData: action.payload };
-    case EUserDataActionTypes.LOGIN_FAIL:
-      return { ...initialState, errorMsg: action.payload };
     case EUserDataActionTypes.LOGOUT:
       return initialState;
-    case EUserDataActionTypes.CLEAR_ERROR:
-      return { ...initialState, errorMsg: "" };
     default:
       return state;
   }

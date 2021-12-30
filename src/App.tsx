@@ -1,6 +1,7 @@
 import Theme from "styles/Theme";
 import GlobalStyle from "styles/GlobalStyle";
-import LoginForm from "components/views/LoginForm";
+import LoginForm from "components/views/LoginForm/LoginForm";
+import RegistrationForm from "components/views/RegistrationForm/RegistrationForm";
 import Products from "components/views/Products";
 import Header from "components/organisms/Header/Header";
 import { useAppSelector } from "store/hooks";
@@ -19,13 +20,20 @@ const App: React.FC = () => {
       <Router>
         <Header />
         <Routes>
-          <Route path="/products" element={<Products />} />
           <Route
             path="/login"
             element={!userData ? <LoginForm /> : <Navigate to="/products" />}
           />
-
-          <Route path="*" element={<Products />} />
+          <Route
+            path="/registration"
+            element={
+              !userData ? <RegistrationForm /> : <Navigate to="/products" />
+            }
+          />
+          {["/", "/products", "*"].map((path, index) => (
+            <Route path={path} element={<Products />} key={index} />
+          ))}
+          <Route path="/" element={<Products />} />
         </Routes>
       </Router>
       <GlobalStyle />

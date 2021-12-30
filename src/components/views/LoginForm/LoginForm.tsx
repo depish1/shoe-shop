@@ -13,7 +13,7 @@ const LoginForm: React.FC = () => {
   const {
     form: { register, handleSubmit, errors },
     formError,
-    handleRegistration,
+    handleRegistrationRedirect,
     handleLogin,
   } = useLoginForm();
 
@@ -34,18 +34,14 @@ const LoginForm: React.FC = () => {
             error={errors.password?.message}
             formProps={register("password")}
           />
-          <Button
-            text="Zaloguj się"
-            type={"submit"}
-            clickHandler={() => console.log("xd")}
-          />
+          <Button text="Zaloguj się" type={"submit"} />
           {formError && <ErrorMsg>{formError}</ErrorMsg>}
         </form>
         <Separator text="Nie masz jeszcze konta?" />
         <Button
           text="Zarejestruj się"
           type={"button"}
-          clickHandler={handleRegistration}
+          clickHandler={handleRegistrationRedirect}
           isSecondary
         />
       </SectionWrapper>
