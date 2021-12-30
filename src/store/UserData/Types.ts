@@ -23,7 +23,6 @@ export interface IUserData {
 export interface IUserDataState {
   userData: null | IUserData;
   isLoading: boolean;
-  errorMsg: string;
 }
 
 export interface IAuthLoadingOnAction {

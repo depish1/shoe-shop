@@ -1,13 +1,9 @@
-import {
-  TUserDataActions,
-  EUserDataActionTypes,
-  IUserDataState,
-} from "./Types";
+import { TUserDataActions } from "./Actions";
+import { EUserDataActionTypes, IUserDataState } from "./Types";
 
 const initialState = {
   isLoading: false,
   userData: null,
-  errorMsg: "",
 };
 const userDataReducer = (
   state: IUserDataState = initialState,

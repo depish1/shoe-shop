@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { login } from "store/UserData/Actions";
+import { login } from "store/UserData/Operations";
 import { useAppDispatch } from "store/hooks";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
