@@ -19,7 +19,7 @@ const RegistrationForm: React.FC = () => {
   return (
     <SectionBackgroundContainer>
       <SectionWrapper>
-        <Headline size={2}>Logowanie</Headline>
+        <Headline size={2}>Rejestracja</Headline>
         <form onSubmit={handleSubmit(handleRegister)}>
           <InputField
             label="Imię"
