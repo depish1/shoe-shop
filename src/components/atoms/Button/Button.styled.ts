@@ -16,14 +16,14 @@ export const StyledButton = styled.button<{ isSecondary?: boolean }>`
   ${({ isSecondary, theme: { colors } }) =>
     isSecondary
       ? `
-  color: ${colors.secondary1};
+  color: ${colors.secondary};
   background-color: ${colors.white1};
-  border: 2px solid ${colors.primary1};
+  border: 2px solid ${colors.primary};
 `
       : `
   color: ${colors.white1};
-  background-color: ${colors.primary1};
-  border: 2px solid ${colors.primary1};
+  background-color: ${colors.primary};
+  border: 2px solid ${colors.primary};
 
 `}
 
@@ -32,7 +32,7 @@ export const StyledButton = styled.button<{ isSecondary?: boolean }>`
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     color: ${({ theme: { colors } }) => colors.white1};
-    background-color: ${({ theme: { colors } }) => colors.primary2};
-    border: 2px solid ${({ theme: { colors } }) => colors.primary2};
+    background-color: ${({ theme: { colors } }) => colors.primaryHover};
+    border: 2px solid ${({ theme: { colors } }) => colors.primaryHover};
   }
 `;

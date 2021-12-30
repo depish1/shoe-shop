@@ -30,16 +30,19 @@ export const StyledInput = styled.input<IFormFieldProps>`
   background-color: ${({ theme: { colors } }) => colors.white1};
   border: 2px solid
     ${({ isInvalid, theme: { colors } }) =>
-      isInvalid ? colors.error : colors.secondary1};
+      isInvalid ? colors.error : colors.secondary};
   border-radius: ${({ theme }) => theme.borderRadius};
   outline: none;
 
   &:focus,
   &:hover {
-    border: 2px solid ${({ theme: { colors } }) => colors.primary1};
+    border: 2px solid
+      ${({ isInvalid, theme: { colors } }) =>
+        isInvalid ? colors.errorHover : colors.primary};
 
     & + ${StyledLabel} {
-      color: ${({ theme: { colors } }) => colors.primary1};
+      color: ${({ isInvalid, theme: { colors } }) =>
+        isInvalid ? colors.errorHover : colors.primary};
     }
   }
 `;

@@ -25,7 +25,7 @@ export const StyledNavLink = styled(Link)`
   svg {
     height: 2rem;
     margin-left: 1rem;
-    fill: ${({ theme: { colors } }) => colors.primary1};
+    fill: ${({ theme: { colors } }) => colors.primary};
     transition: fill 0.2s ease-in-out;
   }
 
@@ -37,7 +37,7 @@ export const StyledNavLink = styled(Link)`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: ${({ theme: { colors } }) => colors.primary1};
+    background-color: ${({ theme: { colors } }) => colors.primary};
     width: 0;
     height: 0;
     transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
@@ -45,7 +45,7 @@ export const StyledNavLink = styled(Link)`
 
   &:hover,
   &:focus {
-    background-color: ${({ theme: { colors } }) => colors.secondary2};
+    background-color: ${({ theme: { colors } }) => colors.secondaryHover};
 
     &::after {
       width: 100%;

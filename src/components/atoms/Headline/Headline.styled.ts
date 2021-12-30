@@ -13,7 +13,7 @@ export const StyledHeadline2 = styled.h2`
     content: "";
     width: 110%;
     height: 6px;
-    background-color: ${({ theme: { colors } }) => colors.primary1};
+    background-color: ${({ theme: { colors } }) => colors.primary};
     position: absolute;
     bottom: 0;
     left: 0;
@@ -33,7 +33,7 @@ export const StyledHeadline3 = styled.h2`
     content: "";
     width: 110%;
     height: 6px;
-    background-color: ${({ theme: { colors } }) => colors.primary1};
+    background-color: ${({ theme: { colors } }) => colors.primary};
     position: absolute;
     bottom: 0;
     left: 0;
@@ -53,7 +53,7 @@ export const StyledHeadline4 = styled.h2`
     content: "";
     width: 110%;
     height: 6px;
-    background-color: ${({ theme: { colors } }) => colors.primary1};
+    background-color: ${({ theme: { colors } }) => colors.primary};
     position: absolute;
     bottom: 0;
     left: 0;

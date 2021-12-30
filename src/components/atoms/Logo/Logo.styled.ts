@@ -13,7 +13,7 @@ export const StyledLogo = styled(Link)<IStyledLogoProps>`
 `;
 
 export const FirstTextPart = styled.span`
-  color: ${({ theme: { colors } }) => colors.primary1};
+  color: ${({ theme: { colors } }) => colors.primary};
 `;
 export const SecondTextPart = styled.span`
   color: ${({ theme: { colors } }) => colors.white1};
