@@ -4,6 +4,7 @@ import LoginForm from "components/views/LoginForm/LoginForm";
 import RegistrationForm from "components/views/RegistrationForm/RegistrationForm";
 import Products from "components/views/Products";
 import Header from "components/organisms/Header/Header";
+import Modal from "components/atoms/Modal/Modal";
 import { useLoader } from "components/atoms/Loader/useLoader";
 import { useAppSelector } from "store/hooks";
 import { ThemeProvider } from "styled-components";
@@ -39,6 +40,7 @@ const App: React.FC = () => {
         </Routes>
       </Router>
       <Loader render={renderLoader} />
+      <Modal />
       <GlobalStyle />
     </ThemeProvider>
   );

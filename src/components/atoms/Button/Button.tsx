@@ -4,7 +4,7 @@ import { MouseEvent } from "react";
 interface IButtonProps {
   text: string;
   type: "submit" | "button";
-  clickHandler?: (event: MouseEvent) => void;
+  clickHandler?: (event: MouseEvent, ...rest: any[]) => void;
   isSecondary?: boolean;
 }
 

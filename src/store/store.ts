@@ -3,12 +3,13 @@ import rootReducer from "./Reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { applyMiddleware, createStore } from "redux";
 import { TUserDataActions } from "./UserData/Actions";
+import { TModalActions } from "./Modal/Actions";
 import { Action } from "redux";
 
 const store = createStore(
   rootReducer,
   composeWithDevTools(
-    applyMiddleware(thunk as ThunkMiddleware<any, Action<TUserDataActions>>)
+    applyMiddleware(thunk as ThunkMiddleware<any, Action<any>>)
   )
 );
 

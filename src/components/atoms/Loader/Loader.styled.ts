@@ -35,22 +35,6 @@ const loaderBlockInverseKF = (value: string) => keyframes`
 	}
 `;
 
-export const StyledLoaderBackground = styled.div`
-  background-color: ${({ theme: { colors } }) => colors.white3}bb;
-  backdrop-filter: blur(2px);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-`;
-
 export const StyledLoader = styled.div`
   position: absolute;
   top: 50%;

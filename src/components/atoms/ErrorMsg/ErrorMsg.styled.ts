@@ -10,5 +10,5 @@ export const ErrorMsg = styled.p`
   font-weight: bold;
   border-radius: ${({ theme }) => theme.borderRadius};
   margin-top: ${({ theme: { spacing } }) => spacing.l};
-  text-align: center;realmie
+  text-align: center;
 `;

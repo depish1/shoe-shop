@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MouseEvent } from "react";
 
 export const SectionBackgroundContainer = styled.main`
   background-color: ${({ theme: { colors } }) => colors.white2};
@@ -18,4 +19,26 @@ export const SectionWrapper = styled.section`
   max-width: 450px;
   border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${({ theme }) => theme.boxShadow};
+`;
+
+export const TextParagraph = styled.p`
+  margin-bottom: ${({ theme: { spacing } }) => spacing.l};
+`;
+
+export const StyledModalBackground = styled.div<{
+  onClick?: (e: MouseEvent) => void;
+}>`
+  background-color: ${({ theme: { colors } }) => colors.white3}bb;
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
 `;

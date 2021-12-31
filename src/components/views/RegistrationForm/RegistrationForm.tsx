@@ -16,6 +16,7 @@ const RegistrationForm: React.FC = () => {
     handleLoginRedirect,
     handleRegister,
   } = useRegistrationForm();
+
   return (
     <SectionBackgroundContainer>
       <SectionWrapper>
