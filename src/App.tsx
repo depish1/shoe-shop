@@ -4,6 +4,7 @@ import LoginForm from "components/views/LoginForm/LoginForm";
 import RegistrationForm from "components/views/RegistrationForm/RegistrationForm";
 import Products from "components/views/Products";
 import Header from "components/organisms/Header/Header";
+import { useLoader } from "components/atoms/Loader/useLoader";
 import { useAppSelector } from "store/hooks";
 import { ThemeProvider } from "styled-components";
 import {
@@ -15,6 +16,7 @@ import {
 
 const App: React.FC = () => {
   const userData = useAppSelector((state) => state.userDataReducer.userData);
+  const { Loader, renderLoader } = useLoader();
   return (
     <ThemeProvider theme={Theme}>
       <Router>
@@ -36,6 +38,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Products />} />
         </Routes>
       </Router>
+      <Loader render={renderLoader} />
       <GlobalStyle />
     </ThemeProvider>
   );
