@@ -11,8 +11,13 @@ import {
   getDoc,
   setDoc,
   Firestore,
+  collection,
+  query,
+  where,
+  getDocs,
 } from "firebase/firestore";
 import firebaseConfig from "utils/firebase/firebaseConfig";
+import { IFilter } from "store/Filters/Types";
 
 interface IuserDataToFirestore {
   name: string;
@@ -88,6 +93,21 @@ class FirebaseHelper {
     } else {
       return null;
     }
+  }
+
+  async getProductsWithFiltres(filters: IFilter[]): Promise<any> {
+    const productsRef = collection(this.db, "products");
+    let q = query(productsRef);
+    if (filters.length) {
+      const conditions = filters.map((filter) =>
+        where(filter.field, filter.how, filter)
+      );
+      q = query(productsRef, ...conditions);
+    }
+    const querySnapshot = await getDocs(q);
+    const products = querySnapshot.docs.map((doc) => doc.data());
+    console.log(products);
+    return products;
   }
 }
 

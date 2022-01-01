@@ -1,19 +1,19 @@
 import { EUserDataActionTypes, IUserData } from "./Types";
 
-export interface IAuthLoadingOnAction {
+interface IAuthLoadingOnAction {
   type: EUserDataActionTypes.AUTH_LOADING_ON;
 }
 
-export interface IAuthLoadingOffAction {
+interface IAuthLoadingOffAction {
   type: EUserDataActionTypes.AUTH_LOADING_OFF;
 }
 
-export interface ILoginSuccessAction {
+interface ILoginSuccessAction {
   type: EUserDataActionTypes.LOGIN_SUCCESS;
   payload: IUserData;
 }
 
-export interface ILogoutAction {
+interface ILogoutAction {
   type: EUserDataActionTypes.LOGOUT;
 }
 

@@ -1,5 +1,12 @@
 import { combineReducers } from "redux";
 import userDataReducer from "./UserData/Reducer";
 import modalReducer from "./Modal/Reducer";
+import productReducer from "./Products/Reducer";
+import filtersReducer from "./Filters/Reducer";
 
-export default combineReducers({ userDataReducer, modalReducer });
+export default combineReducers({
+  userDataReducer,
+  modalReducer,
+  productReducer,
+  filtersReducer,
+});

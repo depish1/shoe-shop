@@ -1,9 +1,9 @@
 import { EModalActionTypes } from "./Types";
 
-export interface ICloseModalAction {
+interface ICloseModalAction {
   type: EModalActionTypes.CLOSE_MODAL;
 }
-export interface IOpenModalAction {
+interface IOpenModalAction {
   type: EModalActionTypes.OPEN_MODAL;
   payload: JSX.Element;
 }
