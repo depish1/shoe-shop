@@ -1,7 +1,7 @@
 import { ThunkDispatch } from "redux-thunk";
 import { Action } from "redux";
 import { EProductsActionTypes } from "./Types";
-import { FirebaseMethods, IErrorCodes } from "utils/firebase/FirebaseHelper";
+import { FirebaseMethods } from "utils/firebase/FirebaseHelper";
 import { IFilter } from "store/Filters/Types";
 
 export const getProductsFromFirebase =
@@ -11,12 +11,12 @@ export const getProductsFromFirebase =
       dispatch({
         type: EProductsActionTypes.PROD_LOADING_ON,
       });
-      const authUserResp = await FirebaseMethods.getProductsWithFiltres(
+      const getProdsResp = await FirebaseMethods.getProductsWithFiltres(
         filters
       );
       dispatch({
         type: EProductsActionTypes.SET_PRODUCTS,
-        payload: authUserResp,
+        payload: getProdsResp,
       });
     } catch (error: any) {
       dispatch({

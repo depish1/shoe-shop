@@ -3,7 +3,7 @@ import { EProductsActionTypes, IProductsState } from "./Types";
 
 const initialState = {
   isLoading: false,
-  products: null,
+  products: [],
 };
 const productsReducer = (
   state: IProductsState = initialState,

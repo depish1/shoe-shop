@@ -1,8 +1,8 @@
-import { EFilterActionTypes, IFilter } from "./Types";
+import { EFilterActionTypes, IFiltersState } from "./Types";
 
 interface ISetFiltersAction {
   type: EFilterActionTypes.SET_FILTERS;
-  payload: IFilter[];
+  payload: IFiltersState;
 }
 interface IClearFiltersAction {
   type: EFilterActionTypes.CLEAR_FILTERS;

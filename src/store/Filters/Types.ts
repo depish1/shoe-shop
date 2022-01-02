@@ -12,5 +12,5 @@ export interface IFilter {
 }
 
 export interface IFiltersState {
-  filters: IFilter[];
+  gender: IFilter | null;
 }

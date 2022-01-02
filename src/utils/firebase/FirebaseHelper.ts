@@ -105,7 +105,9 @@ class FirebaseHelper {
       q = query(productsRef, ...conditions);
     }
     const querySnapshot = await getDocs(q);
-    const products = querySnapshot.docs.map((doc) => doc.data());
+    const products = querySnapshot.docs.map((doc) => {
+      return { ...doc.data(), id: doc.id };
+    });
     console.log(products);
     return products;
   }

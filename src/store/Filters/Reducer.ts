@@ -2,17 +2,15 @@ import { TFiltersActions } from "./Actions";
 import { EFilterActionTypes, IFiltersState } from "./Types";
 
 const initialState = {
-  filters: [],
+  gender: null,
 };
-const modalReducer = (
+const filtersReducer = (
   state: IFiltersState = initialState,
   action: TFiltersActions
 ) => {
   switch (action.type) {
     case EFilterActionTypes.SET_FILTERS:
-      return {
-        filters: action.payload,
-      };
+      return action.payload;
     case EFilterActionTypes.CLEAR_FILTERS:
       return initialState;
     default:
@@ -20,4 +18,4 @@ const modalReducer = (
   }
 };
 
-export default modalReducer;
+export default filtersReducer;

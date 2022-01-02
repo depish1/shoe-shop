@@ -6,6 +6,7 @@ export enum EProductsActionTypes {
 
 export interface IProduct {
   name: string;
+  id: string;
   price: number;
   brand: string;
   genders: string;
@@ -14,6 +15,6 @@ export interface IProduct {
 }
 
 export interface IProductsState {
-  products: null | IProduct[];
+  products: IProduct[];
   isLoading: boolean;
 }

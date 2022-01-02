@@ -8,7 +8,7 @@ export const SectionBackgroundContainer = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
+  padding: 2rem;
 `;
 export const SectionWrapper = styled.section`
   display: flex;
