@@ -11,6 +11,7 @@ export const getProductsFromFirebase =
       dispatch({
         type: EProductsActionTypes.PROD_LOADING_ON,
       });
+
       const getProdsResp = await FirebaseMethods.getProductsWithFiltres(
         filters
       );
@@ -24,6 +25,7 @@ export const getProductsFromFirebase =
       });
       switch (error.message) {
         default:
+          console.error(error);
           throw new Error(
             "Wystąpił niespodziewany problem. Spróbuj ponownie później "
           );

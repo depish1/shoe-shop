@@ -5,6 +5,7 @@ export const Theme = {
   borderRadius: "4px",
   spacing: {
     s: ".5rem",
+    m: ".7rem",
     l: "2rem",
   },
   colors: {

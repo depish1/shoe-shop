@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 interface IFormFieldProps {
   isInvalid?: boolean;
+  noMargin?: boolean;
 }
 
-export const FieldWrapper = styled.div`
+export const FieldWrapper = styled.div<IFormFieldProps>`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.l};
+  margin-bottom: ${({ noMargin, theme: { spacing } }) =>
+    noMargin ? "0" : spacing.l};
 `;
 
 export const StyledLabel = styled.label<IFormFieldProps>`
@@ -16,7 +18,7 @@ export const StyledLabel = styled.label<IFormFieldProps>`
   left: 0;
   top: 0;
   transform: translateY(-50%);
-  margin-left: 1.2rem;
+  margin-left: 0.7rem;
   color: ${({ isInvalid, theme: { colors } }) =>
     isInvalid ? colors.error : colors.secondary1};
   font-weight: bold;
@@ -26,13 +28,15 @@ export const StyledLabel = styled.label<IFormFieldProps>`
 `;
 
 export const StyledInput = styled.input<IFormFieldProps>`
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1rem;
+  padding-right: 0.5rem;
   background-color: ${({ theme: { colors } }) => colors.white1};
   border: 2px solid
     ${({ isInvalid, theme: { colors } }) =>
       isInvalid ? colors.error : colors.secondary};
   border-radius: ${({ theme }) => theme.borderRadius};
   outline: none;
+  width: 100%;
 
   &:focus,
   &:hover {

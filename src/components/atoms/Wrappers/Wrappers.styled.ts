@@ -4,6 +4,7 @@ import { MouseEvent } from "react";
 export const SectionBackgroundContainer = styled.main`
   background-color: ${({ theme: { colors } }) => colors.white2};
   width: 100%;
+  height: fit-content;
   min-height: calc(100vh - ${({ theme }) => theme.headerHeight});
   display: flex;
   justify-content: center;
@@ -35,7 +36,7 @@ export const StyledModalBackground = styled.div<{
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

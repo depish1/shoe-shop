@@ -25,6 +25,7 @@ export const StyledProductListElementDesc = styled.p`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  border-top: 2px solid ${({ theme: { colors } }) => colors.secondary}99;
 `;
 
 export const StyledProductName = styled.span`

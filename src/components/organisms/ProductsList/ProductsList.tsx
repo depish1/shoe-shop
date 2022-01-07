@@ -1,4 +1,3 @@
-import Headline from "components/atoms/Headline/Headline";
 import ProductListElement from "components/molecules/ProductListElement/ProductListElement";
 import { useEffect } from "react";
 import { IFiltersState, IFilter } from "store/Filters/Types";
@@ -9,8 +8,8 @@ import {
   StyledProductsWrapper,
 } from "./ProductsList.styled";
 
-function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
-  return value !== null && value !== undefined;
+function notEmpty<TValue>(value: TValue | null): value is TValue {
+  return value !== null;
 }
 
 const getFiltresArr = (filters: IFiltersState): IFilter[] => {
@@ -21,8 +20,11 @@ const getFiltresArr = (filters: IFiltersState): IFilter[] => {
 
 const ProductsList: React.FC = () => {
   const dispatch = useAppDispatch();
-  const filters = useAppSelector((state) => state.filtersReducer);
-  const products = useAppSelector((state) => state.productReducer.products);
+  const [filters, products] = useAppSelector((state) => [
+    state.filtersReducer,
+    state.productReducer.products,
+  ]);
+
   useEffect(() => {
     dispatch(getProductsFromFirebase(getFiltresArr(filters)));
   }, [dispatch, filters]);

@@ -13,4 +13,8 @@ export interface IFilter {
 
 export interface IFiltersState {
   gender: IFilter | null;
+  brand: IFilter | null;
+  minPrice: IFilter | null;
+  maxPrice: IFilter | null;
+  size: IFilter | null;
 }

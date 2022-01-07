@@ -9,13 +9,14 @@ interface IUseLoaderReturn {
 
 export const useLoader = (): IUseLoaderReturn => {
   const [renderLoader, setRenderLoader] = useState<boolean>(false);
-  const authLoader = useAppSelector((state) => state.userDataReducer.isLoading);
-
-  const loaders = [authLoader];
+  const loaders = useAppSelector((state) => [
+    state.userDataReducer.isLoading,
+    state.productReducer.isLoading,
+  ]);
 
   useEffect(() => {
     setRenderLoader(loaders.includes(true));
-  }, loaders);
+  }, [loaders]);
 
   return { Loader, renderLoader };
 };

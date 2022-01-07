@@ -8,9 +8,11 @@ import {
 
 const StyledProductsContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 300px 1fr;
   grid-gap: 2rem;
   background-color: ${({ theme: { colors } }) => colors.white2};
+  max-width: 1200px;
+  min-height: inherit;
 `;
 
 const Products: React.FC = () => {

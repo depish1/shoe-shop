@@ -99,16 +99,20 @@ class FirebaseHelper {
     const productsRef = collection(this.db, "products");
     let q = query(productsRef);
     if (filters.length) {
-      const conditions = filters.map((filter) =>
-        where(filter.field, filter.how, filter)
-      );
+      const conditions = filters.map(({ field, how, value }) => {
+        if (field === "minPrice" || field === "maxPrice") {
+          field = "price";
+        }
+        return where(field, how, value);
+      });
+
       q = query(productsRef, ...conditions);
     }
     const querySnapshot = await getDocs(q);
     const products = querySnapshot.docs.map((doc) => {
       return { ...doc.data(), id: doc.id };
     });
-    console.log(products);
+
     return products;
   }
 }
