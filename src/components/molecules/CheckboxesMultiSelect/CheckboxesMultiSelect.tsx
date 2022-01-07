@@ -1,14 +1,9 @@
 import CustomCheckbox from "components/atoms/CustomCheckbox/CustomCheckbox";
 import { EFilterMehods } from "components/organisms/FiltersList/helpers";
 import { ChangeEvent, useEffect, useState } from "react";
-import {
-  StyledContainer,
-  StyledLabel,
-  CheckboxesWrapper,
-} from "./CheckboxesMultiSelect.styled";
+import { CheckboxesWrapper } from "./CheckboxesMultiSelect.styled";
 
 interface ICheckboxesMultiSelectProps {
-  bigLabel: string;
   sizesArray: string[];
   handleCheckboxesChange: (
     filterMethod: EFilterMehods,
@@ -35,7 +30,6 @@ const modifyState = (
 };
 
 const CheckboxesMultiSelect: React.FC<ICheckboxesMultiSelectProps> = ({
-  bigLabel,
   sizesArray,
   handleCheckboxesChange,
 }) => {
@@ -55,18 +49,15 @@ const CheckboxesMultiSelect: React.FC<ICheckboxesMultiSelectProps> = ({
   };
 
   return (
-    <StyledContainer>
-      <StyledLabel>{bigLabel}</StyledLabel>
-      <CheckboxesWrapper>
-        {sizesArray.map((size) => (
-          <CustomCheckbox
-            key={size}
-            labelValue={size}
-            handleChange={handleChange}
-          />
-        ))}
-      </CheckboxesWrapper>
-    </StyledContainer>
+    <CheckboxesWrapper>
+      {sizesArray.map((size) => (
+        <CustomCheckbox
+          key={size}
+          labelValue={size}
+          handleChange={handleChange}
+        />
+      ))}
+    </CheckboxesWrapper>
   );
 };
 

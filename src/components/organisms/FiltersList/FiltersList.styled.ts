@@ -9,3 +9,15 @@ export const StyledFiltersList = styled.section`
   width: 100%;
   padding: 2rem;
 `;
+
+export const StyledInputsWrapper = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: ${({ theme: { spacing } }) => spacing.m};
+`;
+
+export const StyledPaddingWrapper = styled.div`
+  padding-top: ${({ theme: { spacing } }) => spacing.m};
+`;

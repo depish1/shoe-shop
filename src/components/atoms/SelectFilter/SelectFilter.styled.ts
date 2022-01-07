@@ -35,5 +35,4 @@ export const StyledSelectWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.l};
 `;

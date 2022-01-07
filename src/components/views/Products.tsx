@@ -11,8 +11,8 @@ const StyledProductsContainer = styled.div`
   grid-template-columns: 300px 1fr;
   grid-gap: 2rem;
   background-color: ${({ theme: { colors } }) => colors.white2};
+  width: 100%;
   max-width: 1200px;
-  min-height: inherit;
 `;
 
 const Products: React.FC = () => {

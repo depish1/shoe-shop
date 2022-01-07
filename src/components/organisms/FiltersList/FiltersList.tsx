@@ -1,10 +1,15 @@
 import Headline from "components/atoms/Headline/Headline";
 import Button from "components/atoms/Button/Button";
 import SelectFilter from "components/atoms/SelectFilter/SelectFilter";
-import MinMaxInput from "components/molecules/MinMaxInput/MinMaxInput";
+import Filter from "components/molecules/Filter/Filter";
 import CheckboxesMultiSelect from "components/molecules/CheckboxesMultiSelect/CheckboxesMultiSelect";
 import InputField from "components/atoms/InputField/InputField";
-import { StyledFiltersList } from "./FiltersList.styled";
+
+import {
+  StyledFiltersList,
+  StyledInputsWrapper,
+  StyledPaddingWrapper,
+} from "./FiltersList.styled";
 import {
   genderOptions,
   brandOptions,
@@ -23,41 +28,56 @@ const FiltersList: React.FC = () => {
   return (
     <StyledFiltersList>
       <Headline size={2}>Filtry</Headline>
-      <SelectFilter
-        name="gender"
-        label="Wybierz płeć"
-        options={genderOptions}
-        handleChange={handleSelectChange}
-      />
-      <SelectFilter
-        name="brand"
-        label="Wybierz markę"
-        options={brandOptions}
-        handleChange={handleSelectChange}
-      />
-      <MinMaxInput bigLabel="Cena:">
-        <InputField
-          label="Min"
-          type="number"
-          name="minPrice"
-          changeHandler={handleInputChange}
-          filterMethod={EFilterMehods.GREATER_EQUAL}
-          noMargin={true}
-        />
-        <InputField
-          label="Max"
-          type="number"
-          name="maxPrice"
-          changeHandler={handleInputChange}
-          filterMethod={EFilterMehods.LESS_EQUAL}
-          noMargin={true}
-        />
-      </MinMaxInput>
-      <CheckboxesMultiSelect
-        bigLabel="Rozmiar"
-        sizesArray={sizesArray}
-        handleCheckboxesChange={handleCheckboxesChange}
-      />
+      <Filter labelText="Płeć">
+        <StyledPaddingWrapper>
+          <SelectFilter
+            name="gender"
+            label="Wybierz płeć"
+            options={genderOptions}
+            handleChange={handleSelectChange}
+          />
+        </StyledPaddingWrapper>
+      </Filter>
+      <Filter labelText="Marka">
+        <StyledPaddingWrapper>
+          <SelectFilter
+            name="brand"
+            label="Wybierz markę"
+            options={brandOptions}
+            handleChange={handleSelectChange}
+          />
+        </StyledPaddingWrapper>
+      </Filter>
+      <Filter labelText="Cena">
+        <StyledPaddingWrapper>
+          <StyledInputsWrapper>
+            <InputField
+              label="Min"
+              type="number"
+              name="minPrice"
+              changeHandler={handleInputChange}
+              filterMethod={EFilterMehods.GREATER_EQUAL}
+              noMargin={true}
+            />
+            <InputField
+              label="Max"
+              type="number"
+              name="maxPrice"
+              changeHandler={handleInputChange}
+              filterMethod={EFilterMehods.LESS_EQUAL}
+              noMargin={true}
+            />
+          </StyledInputsWrapper>
+        </StyledPaddingWrapper>
+      </Filter>
+      <Filter labelText="Rozmiar">
+        <StyledPaddingWrapper>
+          <CheckboxesMultiSelect
+            sizesArray={sizesArray}
+            handleCheckboxesChange={handleCheckboxesChange}
+          />
+        </StyledPaddingWrapper>
+      </Filter>
       <Button text="Filtruj" type="button" clickHandler={handleSetNewFilters} />
     </StyledFiltersList>
   );

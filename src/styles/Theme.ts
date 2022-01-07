@@ -5,15 +5,16 @@ export const Theme = {
   borderRadius: "4px",
   spacing: {
     s: ".5rem",
-    m: ".7rem",
+    m: "1rem",
     l: "2rem",
   },
   colors: {
     white1: "#f8f9fa",
     white2: "#e8e9ea",
     white3: "#d8d9da",
-    dark1: "#131515",
+    dark1: "#030505",
     dark2: "#2b2c28",
+    dark3: "#4b4c48",
     primary: "#0582ca",
     primaryHover: "#006494",
     secondary: "#03071e",
