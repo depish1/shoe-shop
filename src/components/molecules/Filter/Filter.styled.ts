@@ -23,21 +23,22 @@ export const StyledBigLabel = styled.button<IStyledFilterProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme: { colors } }) => colors.dark3};
+  color: ${({ theme: { colors } }) => colors.dark1};
   font-weight: bold;
   font-size: 1rem;
   position: relative;
   padding: 0.3rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
   transition: color 0.2s ease-in-out;
   cursor: pointer;
   border: none;
   background: ${({ theme: { colors } }) => colors.white1};
-  transition: color 0.2s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  font-size: 0.9rem;
 
   svg {
     fill: ${({ theme: { colors } }) => colors.dark3};
-    transition: transform 0.2s ease-in-out, fill 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out, fill 0.1s ease-in-out;
     ${({ isOpen }) =>
       isOpen &&
       `
@@ -50,11 +51,11 @@ export const StyledBigLabel = styled.button<IStyledFilterProps>`
     content: "";
     display: block;
     width: 100%;
-    height: 2px;
+    height: 1px;
     left: 0;
     bottom: 0;
     background-color: ${({ theme: { colors } }) => colors.dark3};
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
   }
 
   &:hover {
@@ -62,6 +63,7 @@ export const StyledBigLabel = styled.button<IStyledFilterProps>`
 
     svg {
       fill: ${({ theme: { colors } }) => colors.dark1};
+      transform: scale(1.1);
     }
 
     &::after {
@@ -72,10 +74,10 @@ export const StyledBigLabel = styled.button<IStyledFilterProps>`
 
 export const StyledChildWrapper = styled.div<IStyledFilterProps>`
   height: auto;
+  transition: height 0.1s ease-in-out;
   ${({ isOpen }) =>
     !isOpen &&
     `
   height: 0;
   `}
-  transition: height 0.2s ease-in-out;
 `;

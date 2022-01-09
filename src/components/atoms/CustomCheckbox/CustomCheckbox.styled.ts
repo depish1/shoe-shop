@@ -6,7 +6,7 @@ export const CustomCheckboxLabel = styled.label`
   display: block;
   background-color: ${({ theme: { colors } }) => colors.white1};
   color: ${({ theme: { colors } }) => colors.secondary};
-  border: ${({ theme: { colors } }) => colors.primary} 2px solid;
+  border: ${({ theme: { colors } }) => colors.primary} 1px solid;
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 0.5rem;
   cursor: pointer;

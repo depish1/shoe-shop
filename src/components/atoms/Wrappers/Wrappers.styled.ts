@@ -43,3 +43,11 @@ export const StyledModalBackground = styled.div<{
   bottom: 0;
   z-index: 1000;
 `;
+
+export const Styled2ColumnWrapper = styled.div`
+  display: flex;
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+`;

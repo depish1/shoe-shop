@@ -31,7 +31,7 @@ export const StyledInput = styled.input<IFormFieldProps>`
   padding: 0.7rem 1rem;
   padding-right: 0.5rem;
   background-color: ${({ theme: { colors } }) => colors.white1};
-  border: 2px solid
+  border: 1px solid
     ${({ isInvalid, theme: { colors } }) =>
       isInvalid ? colors.error : colors.secondary};
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -40,7 +40,7 @@ export const StyledInput = styled.input<IFormFieldProps>`
 
   &:focus,
   &:hover {
-    border: 2px solid
+    border: 1px solid
       ${({ isInvalid, theme: { colors } }) =>
         isInvalid ? colors.errorHover : colors.primary};
 

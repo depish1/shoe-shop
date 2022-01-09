@@ -1,4 +1,4 @@
-import ProductListElement from "components/molecules/ProductListElement/ProductListElement";
+import ProductCard from "components/molecules/ProductCard/ProductCard";
 import { useEffect } from "react";
 import { IFiltersState, IFilter } from "store/Filters/Types";
 import { useAppDispatch, useAppSelector } from "store/hooks";
@@ -32,7 +32,7 @@ const ProductsList: React.FC = () => {
     <StyledProductsContainer>
       <StyledProductsWrapper>
         {products.map((product) => (
-          <ProductListElement key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </StyledProductsWrapper>
     </StyledProductsContainer>

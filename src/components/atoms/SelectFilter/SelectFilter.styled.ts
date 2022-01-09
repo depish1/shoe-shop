@@ -16,14 +16,14 @@ export const StyledLabel = styled.label`
 export const StyledSelectFilter = styled.select`
   padding: 0.7rem 1rem;
   background-color: ${({ theme: { colors } }) => colors.white1};
-  border: 2px solid ${({ theme: { colors } }) => colors.secondary};
+  border: 1px solid ${({ theme: { colors } }) => colors.secondary};
   border-radius: ${({ theme }) => theme.borderRadius};
   outline: none;
   cursor: pointer;
 
   &:focus,
   &:hover {
-    border: 2px solid ${({ theme: { colors } }) => colors.primary};
+    border: 1px solid ${({ theme: { colors } }) => colors.primary};
 
     & + ${StyledLabel} {
       color: ${({ theme: { colors } }) => colors.primary};

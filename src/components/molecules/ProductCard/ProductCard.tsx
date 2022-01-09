@@ -1,20 +1,18 @@
 import {
-  StyledProductListElement,
-  StyledProductListElementImg,
+  StyledProductCard,
+  StyledProductCardImg,
   StyledProductImgWrapper,
   StyledProductName,
   StyledProductPrice,
-  StyledProductListElementDesc,
-} from "./ProductListElement.styled";
+  StyledProductCardDesc,
+} from "./ProductCard.styled";
 import { IProduct } from "store/Products/Types";
 
 interface IProductListElementProps {
   product: IProduct;
 }
 
-const ProductListElement: React.FC<IProductListElementProps> = ({
-  product,
-}) => {
+const ProductCard: React.FC<IProductListElementProps> = ({ product }) => {
   const formatPrice = (price: number) => {
     const priceAsString = `${price}`.replace(".", ",");
     const dotIndex = priceAsString.indexOf(".");
@@ -30,20 +28,20 @@ const ProductListElement: React.FC<IProductListElementProps> = ({
   formatPrice(product.price);
   return (
     <li>
-      <StyledProductListElement>
+      <StyledProductCard to={`/products/${product.id}`}>
         <StyledProductImgWrapper>
-          <StyledProductListElementImg
+          <StyledProductCardImg
             src={product.images[0]}
             alt="Zdjęcie produktu"
           />
         </StyledProductImgWrapper>
-        <StyledProductListElementDesc>
+        <StyledProductCardDesc>
           <StyledProductName>{product.name}</StyledProductName>
           <StyledProductPrice>{formatPrice(product.price)}</StyledProductPrice>
-        </StyledProductListElementDesc>
-      </StyledProductListElement>
+        </StyledProductCardDesc>
+      </StyledProductCard>
     </li>
   );
 };
 
-export default ProductListElement;
+export default ProductCard;
