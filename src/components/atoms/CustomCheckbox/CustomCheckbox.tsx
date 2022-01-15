@@ -3,12 +3,14 @@ import { CustomCheckboxLabel, HiddenCheckbox } from "./CustomCheckbox.styled";
 
 interface ICustomCheckboxProps {
   labelValue: string;
+  value: boolean;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CustomCheckbox: React.FC<ICustomCheckboxProps> = ({
   labelValue,
   handleChange,
+  value,
 }) => {
   return (
     <>
@@ -17,6 +19,7 @@ const CustomCheckbox: React.FC<ICustomCheckboxProps> = ({
         name={labelValue}
         id={labelValue}
         onChange={handleChange}
+        checked={value}
       />
       <CustomCheckboxLabel htmlFor={labelValue}>
         {labelValue}

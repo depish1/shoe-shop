@@ -8,10 +8,10 @@ export const CustomCheckboxLabel = styled.label`
   color: ${({ theme: { colors } }) => colors.secondary};
   border: ${({ theme: { colors } }) => colors.primary} 1px solid;
   border-radius: ${({ theme }) => theme.borderRadius};
-  padding: 0.5rem;
+  padding: 0.6rem;
   cursor: pointer;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

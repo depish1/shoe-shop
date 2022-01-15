@@ -9,7 +9,7 @@ export const SectionBackgroundContainer = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
 `;
 export const SectionWrapper = styled.section`
   display: flex;

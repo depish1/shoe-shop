@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
-export const StyledHeadline2 = styled.h2`
+interface StyledHeadlineProps {
+  noMargin?: boolean;
+}
+
+export const StyledHeadline2 = styled.h2<StyledHeadlineProps>`
   width: fit-content;
   font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.l};
+  margin-bottom: ${({ noMargin, theme: { spacing } }) =>
+    noMargin ? "0" : spacing.l};
   position: relative;
   z-index: 2;
 
@@ -20,11 +25,12 @@ export const StyledHeadline2 = styled.h2`
     z-index: -1;
   }
 `;
-export const StyledHeadline3 = styled.h2`
+export const StyledHeadline3 = styled.h2<StyledHeadlineProps>`
   width: fit-content;
   font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.l};
+  margin-bottom: ${({ noMargin, theme: { spacing } }) =>
+    noMargin ? "0" : spacing.l};
   position: relative;
   z-index: 2;
 
@@ -40,11 +46,12 @@ export const StyledHeadline3 = styled.h2`
     z-index: -1;
   }
 `;
-export const StyledHeadline4 = styled.h2`
+export const StyledHeadline4 = styled.h2<StyledHeadlineProps>`
   width: fit-content;
   font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.l};
+  margin-bottom: ${({ noMargin, theme: { spacing } }) =>
+    noMargin ? "0" : spacing.l};
   position: relative;
   z-index: 2;
 

@@ -1,12 +1,6 @@
 import ImageButton from "components/atoms/ImageButton/ImageButton";
 import { MouseEvent, useState } from "react";
-import {
-  StyledSlider,
-  Slide,
-  Slides,
-  Image,
-  ButtonsWrapper,
-} from "./Slider.styled";
+import { StyledSlider, Slide, Image, ButtonsWrapper } from "./Slider.styled";
 
 interface ISliderProps {
   images: string[];
@@ -23,26 +17,29 @@ const Slider: React.FC<ISliderProps> = ({ images }) => {
   };
 
   return (
-    <StyledSlider>
-      <Slides slidesTransition={`${(100 / images.length) * selectedImage}%`}>
-        {images.map((imageSrc) => (
-          <Slide key={imageSrc}>
-            <Image src={imageSrc} />
-          </Slide>
-        ))}
-      </Slides>
-      <ButtonsWrapper>
-        {images.map((imageSrc, index) => (
-          <ImageButton
-            key={imageSrc}
-            imageSrc={imageSrc}
-            index={index}
-            selectedImage={selectedImage}
-            clickHandler={handleSelectImage}
-          />
-        ))}
-      </ButtonsWrapper>
-    </StyledSlider>
+    <>
+      <StyledSlider>
+        <Slide>
+          <Image src={images[selectedImage]} />
+        </Slide>
+        <ButtonsWrapper>
+          {images.map((imageSrc, index) => (
+            <ImageButton
+              key={imageSrc}
+              imageSrc={imageSrc}
+              index={index}
+              selectedImage={selectedImage}
+              clickHandler={handleSelectImage}
+            />
+          ))}
+        </ButtonsWrapper>
+      </StyledSlider>
+      {/* <Slides slidesCount={images.length} selectedImage={selectedImage}>
+        <Slide slidesCount={images.length} selectedImage={selectedImage}>
+          <Image src={images[0]} />
+        </Slide>
+      </Slides> */}
+    </>
   );
 };
 

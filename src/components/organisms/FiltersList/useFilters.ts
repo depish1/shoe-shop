@@ -4,6 +4,7 @@ import { IFiltersState } from "store/Filters/Types";
 import { EFilterMehods } from "./helpers";
 import { ChangeEvent, MouseEvent } from "react";
 import { EFilterActionTypes } from "store/Filters/Types";
+import { ISize } from "components/molecules/CheckboxesSelect/sizesInitialData";
 
 export const useFilters = () => {
   const currentFilters = useAppSelector((state) => state.filtersReducer);
@@ -11,18 +12,21 @@ export const useFilters = () => {
   const [newFilters, setNewFilters] = useState<IFiltersState>(currentFilters);
 
   const handleCheckboxesChange = (
+    valueArr: ISize[],
     filterMethod: EFilterMehods,
-    valueArr: string[],
     filterName: string
   ) => {
-    if (valueArr.length) {
+    const sizesArr = valueArr
+      .filter((size) => size.value === true)
+      .map((size) => size.size);
+    if (sizesArr.length) {
       setNewFilters((prevState) => {
         return {
           ...prevState,
           [filterName as keyof IFiltersState]: {
             field: filterName,
             how: filterMethod,
-            value: valueArr,
+            value: sizesArr,
           },
         };
       });

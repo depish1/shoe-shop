@@ -2,20 +2,14 @@ import Headline from "components/atoms/Headline/Headline";
 import Button from "components/atoms/Button/Button";
 import SelectFilter from "components/atoms/SelectFilter/SelectFilter";
 import Filter from "components/molecules/Filter/Filter";
-import CheckboxesMultiSelect from "components/molecules/CheckboxesMultiSelect/CheckboxesMultiSelect";
+import CheckboxesSelect from "components/molecules/CheckboxesSelect/CheckboxesSelect";
 import InputField from "components/atoms/InputField/InputField";
-
 import {
   StyledFiltersList,
   StyledInputsWrapper,
   StyledPaddingWrapper,
 } from "./FiltersList.styled";
-import {
-  genderOptions,
-  brandOptions,
-  EFilterMehods,
-  sizesArray,
-} from "./helpers";
+import { genderOptions, brandOptions, EFilterMehods } from "./helpers";
 import { useFilters } from "./useFilters";
 
 const FiltersList: React.FC = () => {
@@ -72,9 +66,9 @@ const FiltersList: React.FC = () => {
       </Filter>
       <Filter labelText="Rozmiar">
         <StyledPaddingWrapper>
-          <CheckboxesMultiSelect
-            sizesArray={sizesArray}
+          <CheckboxesSelect
             handleCheckboxesChange={handleCheckboxesChange}
+            multiSelect={true}
           />
         </StyledPaddingWrapper>
       </Filter>

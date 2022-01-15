@@ -1,4 +1,4 @@
-import { StyledButton } from "./Button.styled";
+import { StyledButton, ButtonWrapper } from "./Button.styled";
 import { MouseEvent } from "react";
 
 interface IButtonProps {
@@ -15,9 +15,15 @@ const Button: React.FC<IButtonProps> = ({
   isSecondary,
 }) => {
   return (
-    <StyledButton type={type} onClick={clickHandler} isSecondary={isSecondary}>
-      {text}
-    </StyledButton>
+    <ButtonWrapper>
+      <StyledButton
+        type={type}
+        onClick={clickHandler}
+        isSecondary={isSecondary}
+      >
+        {text}
+      </StyledButton>
+    </ButtonWrapper>
   );
 };
 

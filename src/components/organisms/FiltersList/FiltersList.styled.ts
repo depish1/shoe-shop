@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledFiltersList = styled.section`
   display: flex;
   flex-direction: column;
-  box-shadow: ${({ theme }) => theme.boxShadow};
+  border: 1px solid ${({ theme: { colors } }) => colors.white3};
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme: { colors } }) => colors.white1};
   width: 100%;

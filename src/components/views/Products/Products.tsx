@@ -6,8 +6,7 @@ import { SectionBackgroundContainer } from "components/atoms/Wrappers/Wrappers.s
 const StyledProductsContainer = styled.div`
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-gap: 2rem;
-  background-color: ${({ theme: { colors } }) => colors.white1};
+  grid-gap: 1rem;
   width: 100%;
   max-width: 1200px;
 `;

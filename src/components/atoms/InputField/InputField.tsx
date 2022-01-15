@@ -39,7 +39,7 @@ const InputField: React.FC<IInputFieldProps> = ({
         isInvalid={!!error}
         {...formProps}
         onChange={changeHandler && ((e) => changeHandler(e, filterMethod))}
-        name={name && name}
+        name={name ? name : formProps?.name}
       />
       <StyledLabel isInvalid={!!error}>{label}</StyledLabel>
       {error && <StyledErrorMsg>{error}</StyledErrorMsg>}

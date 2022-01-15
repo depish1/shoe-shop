@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const StyledProductCard = styled(Link)`
   display: flex;
   flex-direction: column;
-  box-shadow: ${({ theme }) => theme.boxShadow};
+  border: 1px solid ${({ theme: { colors } }) => colors.white3};
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme: { colors } }) => colors.white1};
   overflow: hidden;
@@ -12,7 +12,7 @@ export const StyledProductCard = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    box-shadow: ${({ theme }) => theme.boxShadowHover};
+    box-shadow: ${({ theme }) => theme.boxShadow};
   }
 `;
 export const StyledProductImgWrapper = styled.div`

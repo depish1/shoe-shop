@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ErrorMsg = styled.p`
+export const ErrorMsg = styled.p<{ smallSpacing?: true }>`
   width: 100%;
   border: 2px solid ${({ theme: { colors } }) => colors.error};
   color: ${({ theme: { colors } }) => colors.error};
@@ -9,6 +9,7 @@ export const ErrorMsg = styled.p`
   font-size: 0.9rem;
   font-weight: bold;
   border-radius: ${({ theme }) => theme.borderRadius};
-  margin-top: ${({ theme: { spacing } }) => spacing.l};
+  margin-top: ${({ smallSpacing, theme: { spacing } }) =>
+    smallSpacing ? spacing.s : spacing.l};
   text-align: center;
 `;

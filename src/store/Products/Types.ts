@@ -9,7 +9,7 @@ export interface IProduct {
   id: string;
   price: number;
   brand: string;
-  genders: string;
+  gender: string;
   size: string[];
   images: string[];
 }

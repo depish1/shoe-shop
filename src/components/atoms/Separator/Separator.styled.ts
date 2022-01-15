@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledSeparator = styled.div`
   width: 100%;
   height: 2px;
-  background-color: ${({ theme: { colors } }) => colors.secondary}99;
+  background-color: ${({ theme: { colors } }) => colors.white3};
   margin: ${({ theme: { spacing } }) => spacing.l} 0;
   position: relative;
 `;
