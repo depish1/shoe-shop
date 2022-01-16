@@ -1,5 +1,19 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { MouseEvent } from "react";
+
+export const AppWrapper = styled.div<{ isMenuOpen: boolean | null }>`
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 800px) {
+    ${({ isMenuOpen }) =>
+      isMenuOpen &&
+      css`
+        max-height: 100vh;
+        overflow: hidden;
+      `}
+  }
+`;
 
 export const SectionBackgroundContainer = styled.main`
   background-color: ${({ theme: { colors } }) => colors.white2};

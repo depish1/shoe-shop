@@ -5,9 +5,10 @@ import { navData } from "./Navigation.data";
 
 const Navigation: React.FC = () => {
   const userData = useAppSelector((state) => state.userDataReducer.userData);
+  const isMenuOpen = useAppSelector((state) => state.menuReducer.isMenuOpen);
   const linksToRender = userData ? navData.registered : navData.unregistered;
   return (
-    <StyledNavigation>
+    <StyledNavigation isMenuOpen={isMenuOpen}>
       <StyledMenuList>
         {linksToRender.map((navObject, index) => (
           <NavLink key={index} {...navObject} />

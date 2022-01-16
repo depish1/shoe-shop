@@ -34,7 +34,7 @@ export const StyledProductCardDesc = styled.p`
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-top: 1px solid ${({ theme: { colors } }) => colors.secondary}99;
+  border-top: 1px solid ${({ theme: { colors } }) => colors.white3};
 `;
 
 export const StyledProductName = styled.span`

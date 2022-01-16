@@ -52,7 +52,7 @@ export const StyledLabel = styled.span`
   margin-bottom: ${({ theme: { spacing } }) => spacing.s};
 `;
 
-export const DataWrapper = styled.p`
+export const DataWrapper = styled.div`
   margin-top: ${({ theme: { spacing } }) => spacing.l};
 
   &:first-child {

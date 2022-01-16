@@ -6,6 +6,15 @@ export const StyledNavElement = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    border-top: 1px solid ${({ theme: { colors } }) => colors.primary};
+
+    &:last-of-type {
+      border-bottom: 1px solid ${({ theme: { colors } }) => colors.primary};
+    }
+  }
 `;
 
 export const StyledNavLink = styled(Link)`
@@ -21,6 +30,7 @@ export const StyledNavLink = styled(Link)`
   position: relative;
   z-index: 1;
   transition: background-color 0.2s ease-in-out;
+  width: 100%;
 
   svg {
     height: 2rem;
@@ -46,10 +56,11 @@ export const StyledNavLink = styled(Link)`
   &:hover,
   &:focus {
     background-color: ${({ theme: { colors } }) => colors.secondaryHover};
-
-    &::after {
-      width: 100%;
-      height: 4px;
+    @media only screen and (min-width: 800px) {
+      &::after {
+        width: 100%;
+        height: 4px;
+      }
     }
   }
 `;

@@ -15,33 +15,37 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import { AppWrapper } from "components/atoms/Wrappers/Wrappers.styled";
 
 const App: React.FC = () => {
   const userData = useAppSelector((state) => state.userDataReducer.userData);
+  const isMenuOpen = useAppSelector((state) => state.menuReducer.isMenuOpen);
   const { Loader, renderLoader } = useLoader();
   return (
     <ThemeProvider theme={Theme}>
-      <Router>
-        <Header />
-        <Routes>
-          <Route
-            path="/login"
-            element={!userData ? <LoginForm /> : <Navigate to="/products" />}
-          />
-          <Route
-            path="/registration"
-            element={
-              !userData ? <RegistrationForm /> : <Navigate to="/products" />
-            }
-          />
-          <Route path="/products/:id" element={<ProductSite />} />
-          {["/", "/products", "*"].map((path, index) => (
-            <Route path={path} element={<Products />} key={index} />
-          ))}
-        </Routes>
-      </Router>
-      <Loader render={renderLoader} />
-      <Modal />
+      <AppWrapper isMenuOpen={isMenuOpen}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route
+              path="/login"
+              element={!userData ? <LoginForm /> : <Navigate to="/products" />}
+            />
+            <Route
+              path="/registration"
+              element={
+                !userData ? <RegistrationForm /> : <Navigate to="/products" />
+              }
+            />
+            <Route path="/products/:id" element={<ProductSite />} />
+            {["/", "/products", "*"].map((path, index) => (
+              <Route path={path} element={<Products />} key={index} />
+            ))}
+          </Routes>
+        </Router>
+        <Loader render={renderLoader} />
+        <Modal />
+      </AppWrapper>
       <GlobalStyle />
     </ThemeProvider>
   );
