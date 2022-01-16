@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/shoe-shop/static/js/main.8510cfff.js",
+    "static/media/RegistrationIcon.svg": "/shoe-shop/static/media/RegistrationIcon.48503c3c338f04272b00b393c6acd3ab.svg",
+    "index.html": "/shoe-shop/index.html",
+    "static/media/RefundIcon.svg": "/shoe-shop/static/media/RefundIcon.7cc6c8f05296ec1cfd6d484047d9e712.svg",
+    "static/media/DeliveryIcon.svg": "/shoe-shop/static/media/DeliveryIcon.f35f23e284477ecd9c590130d408ebbf.svg",
+    "static/media/AccIcon.svg": "/shoe-shop/static/media/AccIcon.20080e5ca9cb84db4f15abba45d2395f.svg",
+    "static/media/ShieldIcon.svg": "/shoe-shop/static/media/ShieldIcon.86fe56b59d46058db55914474103e358.svg",
+    "static/media/SuccessIcon.svg": "/shoe-shop/static/media/SuccessIcon.f79b114b5f1ec88a07ffca6bd1e032d5.svg",
+    "static/media/LoginIcon.svg": "/shoe-shop/static/media/LoginIcon.d3c02bbe38c9daf1eef92202f5f42e9c.svg",
+    "static/media/LogoutIcon.svg": "/shoe-shop/static/media/LogoutIcon.c99a6b9dce578e2f5999f3a1dc891f47.svg",
+    "static/media/ArrowIcon.svg": "/shoe-shop/static/media/ArrowIcon.7fc1e00eb9efcbde0781f890e8e47193.svg",
+    "static/media/ExpandIcon.svg": "/shoe-shop/static/media/ExpandIcon.8322b254aa7db62c20fde7acc6f5c150.svg",
+    "main.8510cfff.js.map": "/shoe-shop/static/js/main.8510cfff.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8510cfff.js"
+  ]
+}
