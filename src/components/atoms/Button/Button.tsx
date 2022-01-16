@@ -6,6 +6,7 @@ interface IButtonProps {
   type: "submit" | "button";
   clickHandler?: (event: MouseEvent, ...rest: any[]) => void;
   isSecondary?: boolean;
+  additionalTopMargin?: boolean;
 }
 
 const Button: React.FC<IButtonProps> = ({
@@ -13,6 +14,7 @@ const Button: React.FC<IButtonProps> = ({
   type,
   clickHandler,
   isSecondary,
+  additionalTopMargin,
 }) => {
   return (
     <ButtonWrapper>
@@ -20,6 +22,7 @@ const Button: React.FC<IButtonProps> = ({
         type={type}
         onClick={clickHandler}
         isSecondary={isSecondary}
+        additionalTopMargin={additionalTopMargin}
       >
         {text}
       </StyledButton>

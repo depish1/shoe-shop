@@ -72,7 +72,12 @@ const FiltersList: React.FC = () => {
           />
         </StyledPaddingWrapper>
       </Filter>
-      <Button text="Filtruj" type="button" clickHandler={handleSetNewFilters} />
+      <Button
+        additionalTopMargin
+        text="Filtruj"
+        type="button"
+        clickHandler={handleSetNewFilters}
+      />
     </StyledFiltersList>
   );
 };

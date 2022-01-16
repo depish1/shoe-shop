@@ -17,14 +17,16 @@ export const StyledProductCard = styled(Link)`
 `;
 export const StyledProductImgWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 300px;
   overflow: hidden;
 `;
 export const StyledProductCardImg = styled.img`
   display: block;
-  max-width: 355px;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
   max-height: 100%;
 `;
 

@@ -1,6 +1,7 @@
 import Headline from "components/atoms/Headline/Headline";
 import Button from "components/atoms/Button/Button";
 import CheckboxesSelect from "components/molecules/CheckboxesSelect/CheckboxesSelect";
+import { ReactComponent as SuccessIcon } from "assets/icons/SuccessIcon.svg";
 import { ISize } from "components/molecules/CheckboxesSelect/sizesInitialData";
 import { EFilterMehods } from "components/organisms/FiltersList/helpers";
 import { useState } from "react";
@@ -11,6 +12,8 @@ import {
   StyledPrice,
   StyledLabel,
   DataWrapper,
+  StyledBrand,
+  AccessText,
 } from "./ProductDesc.styled";
 import { ErrorMsg } from "components/atoms/ErrorMsg/ErrorMsg.styled";
 
@@ -22,11 +25,7 @@ const ProductDesc: React.FC<IProductDescProps> = ({ prodData }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>();
   const [errorMsg, setErrorMsg] = useState<string | null>();
 
-  const handleSizeSelect = (
-    valueArr: ISize[],
-    filterMethod: EFilterMehods,
-    filterName: string
-  ) => {
+  const handleSizeSelect = (valueArr: ISize[]) => {
     setErrorMsg(null);
     const sizesArr = valueArr
       .filter((size) => size.value === true)
@@ -44,11 +43,17 @@ const ProductDesc: React.FC<IProductDescProps> = ({ prodData }) => {
   };
   return (
     <StyledProductDescWrapper>
-      <Headline size={3} noMargin>
-        {prodData.name}
-      </Headline>
       <DataWrapper>
-        <StyledLabel>Cena:</StyledLabel>
+        <StyledBrand>{prodData.brand}</StyledBrand>
+        <Headline size={3} noMargin>
+          {prodData.name}
+        </Headline>
+        <AccessText>
+          <SuccessIcon />
+          Produkt dostępny w magazynie
+        </AccessText>
+      </DataWrapper>
+      <DataWrapper>
         <StyledPrice>{formatPrice(prodData.price)}</StyledPrice>
       </DataWrapper>
       <DataWrapper>

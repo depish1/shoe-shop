@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.button<{ isSecondary?: boolean }>`
+export const StyledButton = styled.button<{
+  isSecondary?: boolean;
+  additionalTopMargin?: boolean;
+}>`
   width: 100%;
-  max-wdith: 300px;
+
   border-radius: ${({ theme }) => theme.borderRadius};
   cursor: pointer;
-
+  margin-top: ${({ additionalTopMargin, theme: { spacing } }) =>
+    additionalTopMargin ? spacing.l : null};
   font-size: 1.1rem;
   font-weight: bold;
   padding: 0.8rem 0.6rem;

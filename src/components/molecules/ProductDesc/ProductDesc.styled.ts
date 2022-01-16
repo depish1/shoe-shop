@@ -12,34 +12,50 @@ export const PriceContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+export const StyledBrand = styled.span`
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: ${({ theme: { colors } }) => colors.dark2};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.m};
+`;
+
+export const AccessText = styled.p`
+  display: flex;
+  align-items: center;
+  color: ${({ theme: { colors } }) => colors.primary};
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: ${({ theme: { spacing } }) => spacing.s};
+
+  svg {
+    fill: ${({ theme: { colors } }) => colors.primary};
+    margin-right: ${({ theme: { spacing } }) => spacing.s};
+    width: 1em;
+    height: 1em;
+  }
+`;
 
 export const StyledPrice = styled.span`
   display: block;
-  width: max-content;
   font-size: 2rem;
   font-weight: bold;
-  padding: 1.5rem;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  box-shadow: ${({ theme }) => theme.boxShadow};
-  color: ${({ theme: { colors } }) => colors.white1};
-  background-color: ${({ theme: { colors } }) => colors.error};
+  margin: ${({ theme: { spacing } }) => spacing.m} 0rem;
+  color: ${({ theme: { colors } }) => colors.dark1};
 `;
 export const StyledLabel = styled.span`
   display: block;
   width: min-content;
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid ${({ theme: { colors } }) => colors.secondary};
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: ${({ theme: { colors } }) => colors.secondary};
-  margin-bottom: 1rem;
-`;
-
-export const StyledData = styled.span`
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
   color: ${({ theme: { colors } }) => colors.dark2};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s};
 `;
 
-export const DataWrapper = styled.p``;
+export const DataWrapper = styled.p`
+  margin-top: ${({ theme: { spacing } }) => spacing.l};
+
+  &:first-child {
+    margin-top: 0;
+  }
+`;

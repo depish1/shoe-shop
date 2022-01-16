@@ -12,6 +12,7 @@ export const StyledProductSiteContainer = styled.div`
   min-height: calc(100vh - 4rem - ${({ theme }) => theme.headerHeight});
 
   @media only screen and (max-width: 800px) {
+    max-width: 550px;
     min-height: calc(80vh - 4rem - ${({ theme }) => theme.headerHeight});
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
