@@ -33,6 +33,8 @@ export const Image = styled.img`
 
 export const ButtonsWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.5rem;
   position: absolute;
   bottom: 0;
