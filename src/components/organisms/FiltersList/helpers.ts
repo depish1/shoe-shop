@@ -10,11 +10,11 @@ export const genderOptions = [
 ];
 export const brandOptions = [
   {
-    value: "nike",
+    value: "Nike",
     text: "Nike",
   },
   {
-    value: "adidas",
+    value: "Adidas",
     text: "Adidas",
   },
 ];
