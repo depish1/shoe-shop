@@ -42,7 +42,7 @@ export const ButtonsWrapper = styled.div`
   margin-bottom: 1.5rem;
 
   @media only screen and (max-width: 700px) {
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 `;
