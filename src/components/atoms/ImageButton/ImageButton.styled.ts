@@ -18,6 +18,15 @@ export const StyledImageButton = styled.button<{ isSelected: boolean }>`
     border: ${({ isSelected, theme: { colors } }) =>
       isSelected ? `2px solid ${colors.primary}` : `1px solid ${colors.dark3}`};
   }
+
+  @media only screen and (max-width: 700px) {
+    width: 60px;
+    height: 60px;
+  }
+  @media only screen and (max-width: 400px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const Image = styled.img`

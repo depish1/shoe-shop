@@ -17,7 +17,7 @@ export const StyledBrand = styled.span`
   font-size: 0.9rem;
   font-weight: 500;
   color: ${({ theme: { colors } }) => colors.dark2};
-  margin-bottom: ${({ theme: { spacing } }) => spacing.m};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s};
 `;
 
 export const AccessText = styled.p`

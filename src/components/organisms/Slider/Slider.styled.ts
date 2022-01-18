@@ -36,15 +36,16 @@ export const ButtonsWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  width: 100%;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  margin-bottom: 1.5rem;
+  padding: 1.5rem;
 
   @media only screen and (max-width: 700px) {
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    gap: 1rem;
+    padding: 1rem;
   }
 `;
