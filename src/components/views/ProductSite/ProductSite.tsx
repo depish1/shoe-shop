@@ -1,5 +1,7 @@
 import Slider from "components/organisms/Slider/Slider";
 import ProductData from "components/organisms/ProductData/ProductData";
+import BackButton from "components/atoms/BackButton/BackButton";
+import { useNavigate } from "react-router";
 import { IProduct } from "store/Products/Types";
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "store/hooks";
@@ -20,6 +22,11 @@ const downloadAndSetProductData = async (
 };
 
 const ProductSite: React.FC = () => {
+  const navigate = useNavigate();
+
+  const backHandler = () => {
+    navigate(`/products`);
+  };
   const { id } = useParams();
   const [product, setProduct] = useState<IProduct | undefined>(undefined);
   const productData = useAppSelector(
@@ -38,6 +45,7 @@ const ProductSite: React.FC = () => {
   return (
     <SectionBackgroundContainer>
       <StyledProductSiteContainer>
+        <BackButton backHandler={backHandler} />
         {product !== undefined && <Slider images={product.images} />}
         {product !== undefined && <ProductData prodData={product} />}
       </StyledProductSiteContainer>

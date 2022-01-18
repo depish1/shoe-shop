@@ -10,6 +10,7 @@ export const StyledProductSiteContainer = styled.div`
   grid-template-areas: "slider data";
   grid-template-columns: 1fr 400px;
   min-height: calc(100vh - 4rem - ${({ theme }) => theme.headerHeight});
+  position: relative;
 
   @media only screen and (max-width: 800px) {
     max-width: 550px;
