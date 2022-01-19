@@ -4,6 +4,7 @@ import modalReducer from "./Modal/Reducer";
 import productReducer from "./Products/Reducer";
 import filtersReducer from "./Filters/Reducer";
 import menuReducer from "./Menu/Reducer";
+import basketReducer from "./Basket/Reducer";
 
 export default combineReducers({
   userDataReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   productReducer,
   filtersReducer,
   menuReducer,
+  basketReducer,
 });
