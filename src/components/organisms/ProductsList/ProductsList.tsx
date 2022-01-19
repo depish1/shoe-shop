@@ -18,7 +18,13 @@ const getFiltresArr = (filters: IFiltersState): IFilter[] => {
     .filter(notEmpty);
 };
 
-const ProductsList: React.FC = () => {
+interface IProductsListProps {
+  isFiltersWindowOpen: boolean;
+}
+
+const ProductsList: React.FC<IProductsListProps> = ({
+  isFiltersWindowOpen,
+}) => {
   const dispatch = useAppDispatch();
   const [filters, products] = useAppSelector((state) => [
     state.filtersReducer,
@@ -29,7 +35,7 @@ const ProductsList: React.FC = () => {
     dispatch(getProductsFromFirebase(getFiltresArr(filters)));
   }, [dispatch, filters]);
   return (
-    <StyledProductsContainer>
+    <StyledProductsContainer isFiltersWindowOpen={isFiltersWindowOpen}>
       <StyledProductsWrapper>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

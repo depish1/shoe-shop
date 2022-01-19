@@ -12,7 +12,11 @@ import {
 import { genderOptions, brandOptions, EFilterMehods } from "./helpers";
 import { useFilters } from "./useFilters";
 
-const FiltersList: React.FC = () => {
+interface IFiltersListProps {
+  isFiltersWindowOpen: boolean;
+}
+
+const FiltersList: React.FC<IFiltersListProps> = ({ isFiltersWindowOpen }) => {
   const {
     handleSetNewFilters,
     handleInputChange,
@@ -20,7 +24,7 @@ const FiltersList: React.FC = () => {
     handleCheckboxesChange,
   } = useFilters();
   return (
-    <StyledFiltersList>
+    <StyledFiltersList isFiltersWindowOpen={isFiltersWindowOpen}>
       <Headline size={2}>Filtry</Headline>
       <Filter labelText="Płeć">
         <StyledPaddingWrapper>

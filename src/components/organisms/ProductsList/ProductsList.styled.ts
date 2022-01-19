@@ -1,10 +1,19 @@
 import styled from "styled-components";
 
-export const StyledProductsContainer = styled.section`
+interface IStyledProductsContainerProps {
+  isFiltersWindowOpen: boolean;
+}
+
+export const StyledProductsContainer = styled.section<IStyledProductsContainerProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 900px;
+
+  @media only screen and (max-width: 700px) {
+    display: ${({ isFiltersWindowOpen }) =>
+      isFiltersWindowOpen ? "none" : "flex"};
+  }
 `;
 export const StyledProductsWrapper = styled.ul`
   list-style: none;
