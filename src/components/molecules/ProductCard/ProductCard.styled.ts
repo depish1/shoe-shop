@@ -14,6 +14,7 @@ export const StyledProductCard = styled(Link)`
   &:hover {
     color: ${({ theme: { colors } }) => colors.dark1};
     border: 1px solid ${({ theme: { colors } }) => colors.primary};
+    box-shadow: ${({ theme }) => theme.boxShadow};
   }
 `;
 export const StyledProductImgWrapper = styled.div`

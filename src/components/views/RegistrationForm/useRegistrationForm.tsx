@@ -1,6 +1,6 @@
 import * as yup from "yup";
-import Button from "components/atoms/Button/Button";
-import React, { useState } from "react";
+import RegistrationSuccessModalContent from "components/atoms/Modal/Modals/RegistrationSuccessModalContent/RegistrationSuccessModalContent";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -8,7 +8,6 @@ import { FirebaseMethods } from "utils/firebase/FirebaseHelper";
 import { useAppDispatch } from "store/hooks";
 import { EUserDataActionTypes } from "store/UserData/Types";
 import { useModal } from "components/atoms/Modal/useModal";
-import { TextParagraph } from "components/atoms/Wrappers/Wrappers.styled";
 
 interface IFormInputs {
   name: string;
@@ -50,14 +49,8 @@ export const useRegistrationForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const RegistrationSuccessModalContent: React.FC = () => (
-    <>
-      <TextParagraph>
-        Twoje konto zostało pomyślnie utworzone. Możesz się zalogować.
-      </TextParagraph>
-      <Button text="Zamknij" type="button" clickHandler={closeModal} />
-    </>
-  );
+  const registrationSuccessText: string =
+    "Twoje konto zostało pomyślnie utworzone. Możesz się zalogować.";
 
   const handleLoginRedirect = (): void => {
     navigate("/login");
@@ -82,7 +75,12 @@ export const useRegistrationForm = () => {
       dispatch({
         type: EUserDataActionTypes.AUTH_LOADING_OFF,
       });
-      openModal(undefined, [<RegistrationSuccessModalContent />]);
+      openModal(undefined, [
+        <RegistrationSuccessModalContent
+          text={registrationSuccessText}
+          closeHandler={closeModal}
+        />,
+      ]);
     } catch (error: any) {
       setformError(error.message);
       dispatch({

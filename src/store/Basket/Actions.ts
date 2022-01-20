@@ -1,8 +1,8 @@
-import { EBasketActionTypes, IProduct } from "./Types";
+import { EBasketActionTypes, IBasketProduct } from "./Types";
 
 interface IAddProductAction {
   type: EBasketActionTypes.ADD_PRODUCT;
-  payload: IProduct;
+  payload: IBasketProduct;
 }
 interface IRemoveProductAction {
   type: EBasketActionTypes.REMOVE_PRODUCT;

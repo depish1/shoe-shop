@@ -21,7 +21,7 @@ export const CustomCheckboxLabel = styled.label`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    border: ${({ theme: { colors } }) => colors.dark3} 1px solid;
+    border: ${({ theme: { colors } }) => colors.primary} 1px solid;
     box-shadow: ${({ theme }) => theme.boxShadow};
   }
 `;

@@ -2,11 +2,10 @@ import Headline from "components/atoms/Headline/Headline";
 import Button from "components/atoms/Button/Button";
 import CheckboxesSelect from "components/molecules/CheckboxesSelect/CheckboxesSelect";
 import { ReactComponent as SuccessIcon } from "assets/icons/SuccessIcon.svg";
-import { ISize } from "components/molecules/CheckboxesSelect/sizesInitialData";
-import { EFilterMehods } from "components/organisms/FiltersList/helpers";
-import { useState } from "react";
+import { ErrorMsg } from "components/atoms/ErrorMsg/ErrorMsg.styled";
 import { IProduct } from "store/Products/Types";
 import { formatPrice } from "utils/helpers";
+import { useProductDesc } from "./useProductDesc";
 import {
   StyledProductDescWrapper,
   StyledPrice,
@@ -15,32 +14,14 @@ import {
   StyledBrand,
   AccessText,
 } from "./ProductDesc.styled";
-import { ErrorMsg } from "components/atoms/ErrorMsg/ErrorMsg.styled";
 
 interface IProductDescProps {
   prodData: IProduct;
 }
 
 const ProductDesc: React.FC<IProductDescProps> = ({ prodData }) => {
-  const [selectedSize, setSelectedSize] = useState<string | null>();
-  const [errorMsg, setErrorMsg] = useState<string | null>();
+  const [handleSizeSelect, clickHandler, errorMsg] = useProductDesc(prodData);
 
-  const handleSizeSelect = (valueArr: ISize[]) => {
-    setErrorMsg(null);
-    const sizesArr = valueArr
-      .filter((size) => size.value === true)
-      .map((size) => size.size);
-    if (sizesArr.length) {
-      setSelectedSize(sizesArr[0]);
-    } else {
-      setSelectedSize(null);
-    }
-  };
-
-  const clickHandler = (e: React.MouseEvent) => {
-    if (!selectedSize) return setErrorMsg("Wybierz rozmiar.");
-    console.log(selectedSize);
-  };
   return (
     <StyledProductDescWrapper>
       <DataWrapper>

@@ -23,15 +23,14 @@ const Modal: React.FC = () => {
 
   const closeModal = (event: MouseEvent) => {
     const target = event.target as Element;
-    if (target.id === "root-modal") {
-      dispatch({
-        type: EModalActionTypes.CLOSE_MODAL,
-      });
+    console.log(target);
+    if (target.id === "modal-background") {
+      dispatch({ type: EModalActionTypes.CLOSE_MODAL });
     }
   };
   return isModalOpen
     ? ReactDOM.createPortal(
-        <StyledModalBackground onClick={closeModal}>
+        <StyledModalBackground id="modal-background" onClick={closeModal}>
           <SectionWrapper>{modalContent}</SectionWrapper>
         </StyledModalBackground>,
         document.getElementById("root-modal")!

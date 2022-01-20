@@ -63,7 +63,11 @@ export const StyledBigLabel = styled.button<IStyledFilterProps>`
 
     svg {
       fill: ${({ theme: { colors } }) => colors.dark1};
-      transform: scale(1.1);
+      transform: scale(1.1)
+        ${({ isOpen }) =>
+          isOpen &&
+          `rotate(180deg);
+    `};
     }
 
     &::after {

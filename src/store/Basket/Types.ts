@@ -1,15 +1,14 @@
-export interface IProduct {
-  name: string;
+export interface IBasketProduct {
   id: string;
-  price: number;
+  name: string;
   brand: string;
-  gender: string;
-  size: string[];
-  images: string[];
+  price: number;
+  size: string;
+  image: string;
 }
 
 export interface IBasketState {
-  products: IProduct[];
+  products: IBasketProduct[];
 }
 
 export enum EBasketActionTypes {
